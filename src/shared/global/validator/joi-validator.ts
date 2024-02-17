@@ -41,3 +41,25 @@ export function joiRequestParamsValidation(schema: ObjectSchema): IJoiDecorator 
     return descriptor;
   };
 }
+
+
+
+// Define a decorator factory
+// function ValidateReqParams(schema: Joi.Schema) {
+//   return function (target: any, key: string, descriptor: PropertyDescriptor) {
+//     const originalMethod = descriptor.value;
+
+//     descriptor.value = function (req: Request, res: Response, next: NextFunction) {
+//       const { error } = schema.validate(req.params);
+//       if (error) {
+//         res.status(400).send(error.details[0].message);
+//       } else {
+//         originalMethod.apply(this, [req, res, next]);
+//       }
+//     };
+
+//     return descriptor;
+//   };
+// }
+
+// export default ValidateReqParams;
