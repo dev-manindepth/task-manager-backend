@@ -4,11 +4,10 @@ import { Application, NextFunction, Request, Response, json, urlencoded } from '
 import hpp from 'hpp';
 import helmet from 'helmet';
 import cors from 'cors';
-import cookieSession from 'cookie-session';
 import compression from 'compression';
 import applicationRoutes from '@root/routes';
 import HTTP_STATUS from 'http-status-codes';
-import { CustomError, IErrorResponse } from '@shared/helpers/error-handler';
+import { CustomError, IErrorResponse } from '@global/helpers/error-handler';
 
 const log: Logger = config.createLogger('setupServer');
 const PORT = 8000;
@@ -34,14 +33,6 @@ export class TaskManagerServer {
         credentials: true,
         optionsSuccessStatus: 200,
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
-      })
-    );
-    app.use(
-      cookieSession({
-        name: 'session',
-        keys: [config.COOKIE_SECRET_ONE!, config.COOKIE_SECRET_ONE!],
-        maxAge: 24 * 7 * 3600000,
-        secure: config.NODE_ENV !== 'development'
       })
     );
   }
