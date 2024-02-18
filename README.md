@@ -1,6 +1,6 @@
 # Project Name
 
-This is a documentation for the project XYZ.
+This is a documentation for the project task-manager-backend.
 
 ## Setup Instructions
 
