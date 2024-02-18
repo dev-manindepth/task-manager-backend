@@ -32,7 +32,7 @@ export class TaskManagerServer {
         origin: config.CLIENT_URL,
         credentials: true,
         optionsSuccessStatus: 200,
-        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+        methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS']
       })
     );
   }
